@@ -3,22 +3,32 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0 auto;
-  max-width: 1200px;
-  background-color: rgb(247, 247, 247);
-}
-
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: rgb(235, 233, 234);
+}
+
+.product_body {
+  max-width: 3000px;
+}
+
 /* FONTS */
 
 .rubik-puddles {
   font-family: "Rubik Puddles", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.faster-one-regular {
+  font-family: "Faster One", serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -43,22 +53,54 @@ img {
   font-style: normal;
 }
 
+#heading {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+h1 {
+  grid-row: 1;
+  grid-column: 1;
+  font-family: "Rubik Puddles";
+  font-size: 90px;
+  text-align: center;
+  margin: 0 auto;
+  letter-spacing: 12px;
+}
+
+#mesh {
+  margin: 0 auto;
+  z-index: -1;
+  grid-row: 1;
+  grid-column: 1;
+  width: 30vw;
+  background-color: rgb(255, 255, 255);
+  border-radius: 200px;
+  box-shadow: 0px 0px 100px 100px rgb(255, 255, 255);
+  margin-top: 20px;
+  overscroll-behavior-block: contain;
+}
+
 .menu {
   display: flex;
   justify-content: center;
   gap: 60px;
+  grid-row: 1;
+  font-weight: 300;
   text-decoration: underline rgb(100, 100, 100);
-  margin-top: -50px;
+  text-shadow: rgba(255, 255, 255, 0.279) 1px 3px 4px;
 }
 
 .menu a {
   color: rgb(100, 100, 100);
 }
 
-h1 {
-  font-family: "Rubik Puddles";
-  font-size: 90px;
-  text-align: center;
+.menu a:hover {
+  color: rgb(171, 171, 171);
+  text-decoration: underline rgb(171, 171, 171);
 }
 
 h2 {
@@ -67,7 +109,9 @@ h2 {
   text-align: center;
   letter-spacing: 4px;
   padding: 20px;
+  margin: 0 auto;
   color: rgb(0, 0, 0);
+  font-weight: 100;
 }
 
 h3 {
@@ -78,6 +122,23 @@ h3 {
   font-weight: 400;
 }
 
+.product_h3 {
+  font-family: "Roboto Mono";
+  list-style: none;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 500;
+  color: rgb(93, 93, 93);
+}
+
+.product_title {
+  font-family: "Roboto Mono";
+  list-style: none;
+  font-size: 26px;
+  text-align: center;
+  font-weight: 700;
+}
+
 li {
   font-family: "Roboto Mono";
   list-style: none;
@@ -85,14 +146,34 @@ li {
   text-align: center;
 }
 
-#frontpage_link {
-  text-decoration: underline;
-  color: black;
-}
-
 a {
   text-decoration: none;
   color: black;
+}
+
+.description_list {
+  list-style-type: disc;
+  font-family: "Roboto Mono";
+  font-size: 14px;
+  text-align: start;
+  line-height: 2;
+}
+
+.product_text {
+  font-family: "Roboto Mono";
+  font-size: 14px;
+  text-align: start;
+  line-height: 2;
+  margin-bottom: 3rem;
+}
+
+/* DECOR */
+.hl {
+  position: absolute;
+  width: 100%;
+  height: 0.5px;
+  background-color: rgb(0, 0, 0);
+  left: 0;
 }
 /* GRIDS */
 
@@ -101,14 +182,21 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 60px;
   padding: 1rem;
+  font-weight: 300;
 }
 
 .list_element {
   padding: 40px;
-  background-color: rgb(232, 232, 232);
+  background-color: rgb(234, 224, 231);
   border-radius: 5px;
   border: solid 1px black;
-  box-shadow: 4px 4px 5px 2px #00000045;
+  box-shadow: 4px 4px 10px 2px #00000025;
+}
+
+.list_element:hover {
+  filter: drop-shadow(16px 16px 20px white);
+  filter: opacity(80%);
+  background-color: rgb(226, 214, 222);
 }
 
 .card_grid {
@@ -129,6 +217,11 @@ a {
   box-shadow: 0px 4px 10px 2px #00000045;
 }
 
+.product_card:hover {
+  filter: drop-shadow(16px 16px 20px white);
+  filter: opacity(80%);
+}
+
 .product_card img {
   border-radius: 5px;
 }
@@ -146,18 +239,118 @@ a {
   width: 100px;
 }
 
-.product_label {
-  display: flex;
-  justify-content: space-between;
+.soldout_label {
+  position: absolute;
+  right: -1;
+  top: -1;
   font-family: "Roboto Mono";
   font-size: 14px;
+  background-color: rgb(197, 197, 197);
+  box-shadow: 0px 2px 4px 0px #00000045;
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 100px;
+  z-index: 1;
+}
+
+.sold_out img {
+  filter: opacity(40%);
+}
+
+.price_tag {
+  display: flex;
+  justify-content: center;
+}
+
+.price_1 {
+  margin-right: 30px;
+}
+
+.price_2 {
+  text-decoration: line-through 2px;
+  color: darkgray;
+}
+
+.product_label {
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto Mono";
+  font-size: 14px;
+  color: rgb(72, 72, 72);
+  padding-top: 20px;
+}
+
+.product_section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0px, 500px));
+  gap: 8vw;
+  justify-content: center;
+  align-items: start;
+  padding: 40px;
+}
+
+.product_section h2 {
+  margin-bottom: 40px;
+}
+
+.product_section h2,
+.product_section h3 {
+  text-align: start;
+  padding: 0;
+}
+
+.product_section li {
+  line-height: 4;
+  list-style-position: inside;
+}
+
+.product_description {
+  max-width: 500px;
+}
+
+.details_section2 {
+  display: block;
+}
+
+.details_section2 li {
+  line-height: 3;
+}
+
+.buy_section {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.buy {
+  width: 120px;
+  height: 40px;
+  font-family: "Roboto Mono";
+  font-weight: 400;
+  padding: 10px;
 }
 
 @media only screen and (max-width: 700px) {
+  body {
+    max-width: 670px;
+  }
   .card_grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     padding: 1rem;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  .menu li {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 30px;
   }
 }
