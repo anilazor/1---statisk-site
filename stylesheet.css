@@ -17,6 +17,7 @@ body {
 
 .product_body {
   max-width: 3000px;
+  margin: 0 auto;
 }
 
 /* FONTS */
@@ -290,7 +291,6 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(0px, 500px));
   gap: 8vw;
   justify-content: center;
-  align-items: start;
   padding: 40px;
 }
 
