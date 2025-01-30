@@ -209,13 +209,11 @@ a {
 .product_card {
   position: relative;
   display: grid;
-  grid-template-columns: subgrid;
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
   padding: 1rem;
   border: solid 1px rgb(255, 255, 255);
   box-shadow: 0px 4px 10px 2px #00000045;
-  height: 100%;
 }
 
 .card_text {
