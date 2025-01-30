@@ -92,7 +92,6 @@ h1 {
   grid-row: 1;
   font-weight: 300;
   text-decoration: underline rgb(100, 100, 100);
-  text-shadow: rgba(255, 255, 255, 0.279) 1px 3px 4px;
 }
 
 .menu a {
@@ -338,7 +337,7 @@ a {
 
 @media only screen and (max-width: 700px) {
   body {
-    /* max-width: 670px; */
+    max-width: 670px;
     max-width: 90vw;
   }
   .card_grid {

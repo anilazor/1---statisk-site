@@ -1,0 +1,222 @@
+/* Generel styling */
+body {
+  max-width: 3000px;
+  margin: 0 auto;
+  background-color: rgb(235, 233, 234);
+}
+
+/*  Fonts */
+
+.rubik-puddles {
+  font-family: "Rubik Puddles", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.faster-one-regular {
+  font-family: "Faster One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-mono {
+  font-family: "Roboto Mono", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.space-mono-regular {
+  font-family: "Space Mono", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.doto {
+  font-family: "Doto", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* fonts styling */
+h1 {
+  grid-row: 1;
+  grid-column: 1;
+  font-family: "Rubik Puddles";
+  font-size: 90px;
+  text-align: center;
+  margin: 0 auto;
+  letter-spacing: 12px;
+}
+
+h2 {
+  font-family: "Space Mono";
+  font-size: 40px;
+  letter-spacing: 4px;
+  padding: 20px;
+  color: rgb(0, 0, 0);
+  font-weight: 100;
+}
+
+h3 {
+  font-family: "Roboto Mono";
+  list-style: none;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 400;
+  text-shadow: (2px 4px 20px white);
+}
+
+span {
+  font-weight: 500;
+  font-family: "Roboto Mono";
+  list-style: none;
+  font-size: 14px;
+  text-shadow: (2px 4px 20px white);
+}
+
+p {
+  font-family: "Roboto Mono";
+  list-style: none;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Decor */
+#mesh {
+  margin: 0 auto;
+  z-index: -1;
+  grid-row: 1;
+  grid-column: 1;
+  width: 30vw;
+  background-color: rgb(255, 255, 255);
+  border-radius: 200px;
+  box-shadow: 0px 0px 100px 100px rgb(255, 255, 255);
+  margin-top: 20px;
+  overscroll-behavior-block: contain;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  grid-row: 1;
+  font-weight: 300;
+  text-decoration: underline rgb(100, 100, 100);
+  text-shadow: rgba(255, 255, 255, 0.279) 1px 3px 4px;
+}
+
+.menu a {
+  color: rgb(100, 100, 100);
+}
+
+.menu a:hover {
+  color: rgb(171, 171, 171);
+  text-decoration: underline rgb(171, 171, 171);
+}
+
+/*  */
+
+.product_h3 {
+  font-family: "Roboto Mono";
+  list-style: none;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 500;
+  color: rgb(93, 93, 93);
+}
+
+.product_title {
+  font-family: "Roboto Mono";
+  list-style: none;
+  font-size: 26px;
+  text-align: center;
+  font-weight: 700;
+}
+
+li {
+  font-family: "Roboto Mono";
+  list-style: none;
+  font-size: 20px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Container til produktet */
+.productContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0px, 500px));
+  gap: 8vw;
+  justify-content: center;
+  padding: 40px;
+  margin: 0px;
+}
+
+.productContainer h2,
+.productContainer h3 {
+  text-align: start;
+  padding: 0;
+}
+
+/* Produktbillede container */
+figure {
+  margin: 0;
+}
+/* Produktnavn */
+.productName {
+  margin-bottom: 40px;
+  margin-top: 0;
+  font-family: "Roboto Mono";
+  list-style: none;
+  font-size: 26px;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: (2px 4px 20px white);
+}
+/* Produktbillede */
+.productImage {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.308);
+  filter: drop-shadow(16px 16px 20px white);
+}
+
+.productDescription {
+  font-family: "Roboto Mono";
+  font-size: 14px;
+  text-align: start;
+  line-height: 2.2;
+  margin-top: 2rem;
+}
+
+/* Detaljeret produktbeskrivelse */
+.productDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Køb-knap */
+.buyButton {
+  width: 120px;
+  height: 40px;
+  font-family: "Roboto Mono";
+  font-weight: 400;
+  padding: 10px;
+  filter: drop-shadow(16px 16px 20px white);
+}
+/* pris og knap */
+.buy_section {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.product_price {
+  text-shadow: (2px 4px 20px white);
+}
