@@ -208,7 +208,7 @@ a {
 
 .product_card {
   position: relative;
-  display: grid;
+  /* display: grid; */
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
   padding: 1rem;
