@@ -177,6 +177,14 @@ a {
 }
 /* GRIDS */
 
+.category_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 60px;
+  padding: 1rem;
+  font-weight: 300;
+}
+
 .list_grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -233,6 +241,7 @@ a {
 
 .sale_label {
   position: absolute;
+  visibility: hidden;
   left: -1;
   top: -1;
   font-family: "Roboto Mono";
@@ -244,8 +253,13 @@ a {
   width: 100px;
 }
 
+.show {
+  visibility: visible;
+}
+
 .soldout_label {
   position: absolute;
+  visibility: hidden;
   right: -1;
   top: -1;
   font-family: "Roboto Mono";
