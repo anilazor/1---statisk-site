@@ -1,18 +1,20 @@
 const listContainer = document.querySelector(".card_grid");
-fetch(`https://kea-alt-del.dk/t7/api/products`)
+// fetch(`https://kea-alt-del.dk/t7/api/products`)
+const categoryProducts = new URLSearchParams(window.location.search).get("category");
+fetch(`https://kea-alt-del.dk/t7/api/products?category=${categoryProducts}`)
   .then((response) => response.json())
   .then((data) => showList(data));
-//   .then(showList);
 
 function showList(products) {
   console.log(products);
-  let markup = "";
-  products
-    .map((product) => {
-      markup += `<a href="product.html">
+  const markup = products
 
+    .map(
+      (product) => `<a href="product.html?id=${product.id}">
       <div class="product_card">
             <img src= "https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp"/>
+            <label class="sale_label ${product.discount && "show"}">-${product.discount}% sale!</label>
+            <label class="soldout_label ${product.soldout && "show"}">Sold out</label>
             <div class="card_text">
               <div class="product_label">
                 <label>${product.productdisplayname}</label>
@@ -22,10 +24,8 @@ function showList(products) {
               </div>
             </div>
           </div>
-  
-          </a>`;
-    })
+          </a>`
+    )
     .join("");
-  console.log(markup);
   listContainer.innerHTML = markup;
 }
