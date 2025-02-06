@@ -4,7 +4,6 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((response) => response.json())
   .then((data) => {
     productContainer.innerHTML = `
-   
     <figure>
         <img
 src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp"
@@ -14,7 +13,7 @@ src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp"
        
       </figure>
       <section class="productDetails">
-        <h2 class="productName">${data.variantname}</h2>
+        <h2 class="productName">${data.brandname} | ${data.variantname}</h2>
         <div class="buy_section">
         <h3 class="product_price">${data.price},-</h3>
         <button class="buyButton">Add to cart</button>

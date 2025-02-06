@@ -253,10 +253,6 @@ a {
   width: 100px;
 }
 
-.show {
-  visibility: visible;
-}
-
 .soldout_label {
   position: absolute;
   visibility: hidden;
@@ -272,8 +268,16 @@ a {
   z-index: 1;
 }
 
-.sold_out img {
+.soldout img {
   filter: opacity(40%);
+}
+
+.discountPrice {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
 }
 
 .price_tag {
@@ -281,13 +285,27 @@ a {
   justify-content: center;
 }
 
+.dashed {
+  color: darkgray;
+  text-decoration: line-through 2px;
+}
+
 .price_1 {
   margin-right: 30px;
 }
 
-.price_2 {
-  text-decoration: line-through 2px;
-  color: darkgray;
+.filterButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.filterButtons button {
+  font-family: "Roboto Mono";
+  font-weight: 400;
+  padding: 5px 10px 5px 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
 }
 
 .product_label {
@@ -347,6 +365,10 @@ a {
   font-family: "Roboto Mono";
   font-weight: 400;
   padding: 10px;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 700px) {
