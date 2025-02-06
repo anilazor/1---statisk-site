@@ -1,26 +1,47 @@
 const listContainer = document.querySelector(".card_grid");
-// fetch(`https://kea-alt-del.dk/t7/api/products`)
-const categoryProducts = new URLSearchParams(window.location.search).get("category");
-fetch(`https://kea-alt-del.dk/t7/api/products?category=${categoryProducts}`)
+const categoryName = new URLSearchParams(window.location.search).get("category");
+
+document.querySelectorAll("button").forEach((button) => button.addEventListener("click", showFiltered));
+function showFiltered() {
+  const filter = this.dataset.gender;
+  if (filter == "All") {
+    showProducts(allData);
+  } else {
+    fraction = allData.filter((product) => product.gender === filter);
+    showProducts(fraction);
+  }
+}
+
+let allData;
+
+fetch(`https://kea-alt-del.dk/t7/api/products?category=${categoryName}&start=14&limit=40`)
   .then((response) => response.json())
-  .then((data) => showList(data));
+  .then((json) => {
+    allData = json;
+    showProducts(allData);
+  });
 
-function showList(products) {
-  console.log(products);
-  const markup = products
-
+function showProducts(data) {
+  const markup = data
     .map(
-      (product) => `<a href="product.html?id=${product.id}">
-      <div class="product_card">
-            <img src= "https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp"/>
-            <label class="sale_label ${product.discount && "show"}">-${product.discount}% sale!</label>
-            <label class="soldout_label ${product.soldout && "show"}">Sold out</label>
+      (element) => `
+      
+      <a href="product.html?id=${element.id}">
+      <div class="product_card ${element.soldout && "soldout show"}">
+            <img src= "https://kea-alt-del.dk/t7/images/webp/640/${element.id}.webp"/>
+            <label class="sale_label ${element.discount && "show"}">-${element.discount}% sale!</label>
+            <label class="soldout_label ${element.soldout && "show"}">Sold out</label>
             <div class="card_text">
               <div class="product_label">
-                <label>${product.productdisplayname}</label>
+                <label>${element.brandname} | ${element.productdisplayname}</label>
               </div>
               <div class="price_tag">
-                <h3>${product.price},-</h3>
+              <div class="price_1">
+                <h3 class="${element.discount && "dashed"}">${element.price},- </h3>
+                </div>
+                <div class="price_2">
+                <h3 class="discountPrice ${element.discount && "show"}"> ${Math.floor(element.price * (element.discount / 100))},-</h3>
+                </div>
               </div>
             </div>
           </div>
